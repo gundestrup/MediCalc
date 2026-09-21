@@ -1,0 +1,67 @@
+/*
+ * Custom styles for MediCalc (complements Bulma 1.0.2)
+ */
+
+/* Watermark — Borg Collective brand icon, centered on page, scales with viewport */
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 40vw;
+    max-width: 600px;
+    max-height: 600px;
+    min-width: 200px;
+    min-height: 200px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.watermark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Navbar brand icon */
+.navbar-icon {
+    max-height: 2.25rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* Content above watermark */
+.navbar,
+.section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Transparent backgrounds so watermark shows through */
+.box,
+.table,
+.table thead th,
+.table tbody tr,
+.notification,
+.input,
+.textarea,
+.select select {
+    background-color: transparent !important;
+}
+
+/* Flash notification fade-out */
+@keyframes flash-fade {
+    0%   { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+#notice {
+    animation: flash-fade 2s ease-in forwards;
+}
+
+#error {
+    animation: flash-fade 15s ease-in forwards;
+}

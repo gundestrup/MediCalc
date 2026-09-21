@@ -1,0 +1,29 @@
+<h1 class="title">Blood Pressure Calculator</h1>
+<p class="subtitle">Upload a CSV file to generate a blood pressure graph</p>
+
+<div class="notification is-warning is-light">
+  Please note: BP only works with specific CSV files.
+</div>
+
+<div class="box">
+  <ul>
+    <li>Select file to upload</li>
+    <li>Get the result</li>
+    <li>Download the BP graph if needed</li>
+  </ul>
+
+  <%= form_with url: graph_bps_path, method: :post, multipart: true do |f| %>
+    <div class="field">
+      <%= f.label :file, "Select a BP CSV file", class: "label" %>
+      <div class="control">
+        <%= f.file_field :file, class: "file-input" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <%= submit_tag "Create BP graph", class: "button is-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
