@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Pin json to 2.x — json 3.0 changed JSON.parse signature (breaks ActiveSupport session decryption)
-gem "json", "~> 2.0"
+gem "json", "~> 3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
