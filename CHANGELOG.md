@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased]
+
+### Security
+
+- Updated `rmagick` to 7.1.5 for upstream ImageMagick file-reading and
+  profile handling hardening; updated `bigdecimal` to 4.1.3 for GC-safety
+  and precision fixes.
+
 ## [0.1.0] - 2026-09-21
 
 First public release — extracted from the private `scripts` monorepo to a

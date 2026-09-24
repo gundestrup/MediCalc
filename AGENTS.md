@@ -26,7 +26,7 @@ All computation is request-scoped.
 | JS | Importmap, Turbo Rails, Stimulus Rails | — |
 | CSS | Bulma (committed locally) | 1.0.2 |
 | Graphing | Gruff (depends on rmagick) | 0.32.0 |
-| Image lib | rmagick | 7.1.4 |
+| Image lib | rmagick | 7.1.5 |
 | CSV | Ruby stdlib `csv` gem | — |
 | Security | Brakeman, Bundler Audit, Importmap audit | CI |
 
