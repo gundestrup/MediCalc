@@ -69,7 +69,7 @@ The app is available at `http://127.0.0.1:3000`.
 
 ## Project structure
 
-```
+```text
 MediCalc/
 ├── app/
 │   ├── controllers/

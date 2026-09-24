@@ -16,6 +16,7 @@ The entire application was migrated from Rails 2.2.2 (2008) to Rails 8.1
 with Ruby 3.4.10 via rbenv before the extraction.
 
 ### Added
+
 - `Gemfile` and `Gemfile.lock` (Bundler) — replaces Rails 2 `config.gem`
   declarations. Includes `gruff`, `rmagick`, `csv`, `puma`, `propshaft`,
   `turbo-rails`, `stimulus-rails`, `importmap-rails`.
@@ -53,6 +54,7 @@ with Ruby 3.4.10 via rbenv before the extraction.
   `app/assets/stylesheets/bulma.min.css`.
 
 ### Changed
+
 - `SteadyStatesController` ported to Rails 8 conventions: modern parameter
   handling (`params[:name].present?`), string interpolation, symbol-to-string
   key changes.
@@ -75,6 +77,7 @@ with Ruby 3.4.10 via rbenv before the extraction.
   so the watermark shows through all content.
 
 ### Removed
+
 - All Rails 2 config files (`config/boot.rb`, `config/environment.rb`,
   `config/environments/*`, `config/initializers/*`, `config/database.yml`,
   `config/routes.rb` — all regenerated for Rails 8).
@@ -99,6 +102,7 @@ with Ruby 3.4.10 via rbenv before the extraction.
   the layout.
 
 ### Fixed
+
 - **Critical: `ArgumentError (wrong number of arguments (given 2, expected 1))`
   on session-bearing requests.** Root cause: the `json` gem 3.0.2 changed
   `JSON.parse` to accept only one argument. ActiveSupport 8.1.3.1 calls
@@ -112,6 +116,7 @@ with Ruby 3.4.10 via rbenv before the extraction.
   `begin/rescue` debug block around `csp_meta_tag` in the layout.
 
 ### Security
+
 - CSRF protection hardened with explicit `protect_from_forgery with:
   :exception`.
 - HTML entity escaping for JSON output enabled (XSS prevention).
@@ -122,6 +127,7 @@ with Ruby 3.4.10 via rbenv before the extraction.
   `--oss-only --metrics off` — no registry packs, no cloud upload.
 
 ### Verification
+
 - `bundle exec rails runner` confirms Rails 8.1.3.1 on Ruby 3.4.10.
 - `rails server` boots successfully; all routes return 200 OK
   (`/`, `/steady_states`, `/bps`), with and without session cookies.

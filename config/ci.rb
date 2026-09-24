@@ -6,6 +6,7 @@ CI.run do
   step "Security: Gem audit", "bin/bundler-audit"
   step "Security: Importmap vulnerability audit", "bin/importmap audit"
   step "Security: Brakeman code analysis", "bin/brakeman --quiet --no-pager --exit-on-warn --exit-on-error"
+  step "Lint: Markdown", "npx --yes markdownlint-cli2@0.23.2"
 
 
   # Optional: set a green GitHub commit status to unblock PR merge.
