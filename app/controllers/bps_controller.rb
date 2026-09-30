@@ -12,27 +12,40 @@ class BpsController < ApplicationController
     # NO.,DATE,TIME,SYS,DIA,PLS
     # 1,13618/53/255,255:255:255,183,97,75
     #
-    @data = params[:dump][:file]
-    @datasingle = CSV.new(params[:dump][:file])
-    @patientname = @datasingle.shift[1]
+    file = params[:file]
+    unless file.respond_to?(:read)
+      redirect_to bps_path, flash: { error: "Please select a CSV file to upload" }
+      return
+    end
 
-    @datatable = CSV.parse(@data,
-                           headers: :second_row,
-                           return_headers: false,
-                           converters: :integer)
+    @data = file.read
 
-    @tablecol = @datatable.by_col!
+    begin
+      @datasingle = CSV.new(@data)
+      @patientname = @datasingle.shift[1]
 
-    @number = @tablecol[0] # number
-    @date = @tablecol[1]   # date
-    @time = @tablecol[2]   # time
-    @sys = @tablecol[3]    # systolic
-    @dia = @tablecol[4]    # diastolic
-    @hr = @tablecol[5]     # pulse
+      @datatable = CSV.parse(@data,
+                             headers: :second_row,
+                             return_headers: false,
+                             converters: :integer)
 
-    @hravg = (@hr.sum / @hr.length)
-    @sysavg = (@sys.sum / @sys.length)
-    @diaavg = (@dia.sum / @dia.length)
+      @tablecol = @datatable.by_col!
+
+      # Column arrays include the header cell as their first element
+      @number = @tablecol[0].drop(1) # number
+      @date = @tablecol[1].drop(1)   # date
+      @time = @tablecol[2].drop(1)   # time
+      @sys = @tablecol[3].drop(1)    # systolic
+      @dia = @tablecol[4].drop(1)    # diastolic
+      @hr = @tablecol[5].drop(1)     # pulse
+
+      @hravg = (@hr.sum / @hr.length)
+      @sysavg = (@sys.sum / @sys.length)
+      @diaavg = (@dia.sum / @dia.length)
+    rescue CSV::MalformedCSVError, NoMethodError, TypeError, ZeroDivisionError
+      redirect_to bps_path, flash: { error: "Could not parse the CSV file" }
+      return
+    end
 
     # Gruff grapher
     g = Gruff::Line.new("1024x768")

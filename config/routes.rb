@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :steady_states
   resources :bps do
     collection do
-      get :graph
-      post :graph
+      get "graph" => "bps#graph"
+      post "graph" => "bps#graph"
     end
   end
 end

@@ -8,9 +8,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Security
 
-- Updated `rmagick` to 7.1.5 for upstream ImageMagick file-reading and
-  profile handling hardening; updated `bigdecimal` to 4.1.3 for GC-safety
-  and precision fixes.
+- Updated `rails` to 8.1.4 and `rmagick` to 7.1.6 (patch/minor bumps);
+  earlier updates added `rmagick` 7.1.5 upstream ImageMagick hardening
+  and `bigdecimal` 4.1.3 GC-safety fixes.
+
+### Fixed
+
+- **Blood Pressure CSV upload was broken end-to-end.** The `form_with`
+  in `bps/index` submits the field unscoped as `params[:file]`, but
+  `BpsController#graph` read `params[:dump][:file]` — so every upload
+  500'd on `nil[:file]`. Even with the right param name,
+  `CSV.new(UploadedFile)` fails (`UploadedFile` does not quack like IO),
+  and `CSV::Table` column access in `by_col` mode returns each column
+  *with its header cell*, so `@hr.sum` died on the `"PLS"` string. The
+  action now reads `params[:file]`, materializes the upload with
+  `file.read`, drops header cells via `.drop(1)`, and redirects to the
+  form with a flash error when the file is missing or unparseable.
+- Added `lang="da"` to the `<html>` element (SonarCloud `Web:S5254`).
+- `bps` collection routes now declare explicit `controller#action`
+  mappings (`get "graph" => "bps#graph"`) — same routes, satisfies
+  SonarCloud `rubydre:S7875`.
 
 ## [0.1.0] - 2026-09-21
 
