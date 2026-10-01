@@ -2,7 +2,7 @@
 # CE-only local rules — no registry packs (see engineering-memory tools/semgrep.md)
 # https://semgrep.dev/docs/
 #
-# Run: semgrep scan --config .semgrep.yml --error app/ lib/ config/
+# Run: semgrep scan --config .semgrep.yml --error .
 
 rules:
   # Detect String#scan with unanchored polynomial regex (ReDoS).
