@@ -20,13 +20,13 @@ All computation is request-scoped.
 | Component | Technology | Version |
 | --- | --- | --- |
 | Language | Ruby (rbenv) | 3.4.10 |
-| Framework | Rails | 8.1.3.1 |
+| Framework | Rails | 8.1.4 |
 | Web server | Puma | 8.0.2 |
 | Asset pipeline | Propshaft | — |
 | JS | Importmap, Turbo Rails, Stimulus Rails | — |
 | CSS | Bulma (committed locally) | 1.0.2 |
 | Graphing | Gruff (depends on rmagick) | 0.32.0 |
-| Image lib | rmagick | 7.1.5 |
+| Image lib | rmagick | 7.1.6 |
 | CSV | Ruby stdlib `csv` gem | — |
 | Security | Brakeman, Bundler Audit, Importmap audit | CI |
 

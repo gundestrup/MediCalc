@@ -29,6 +29,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
   mappings (`get "graph" => "bps#graph"`) — same routes, satisfies
   SonarCloud `rubydre:S7875`.
 
+### Changed
+
+- `brakeman` 8.0.6 → 8.1.0 (minor).
+- Semgrep CI step now scans `.` instead of explicit
+  `app/ lib/ config/ Rakefile` roots — `semgrep scan` hard-errors
+  (exit 2) on a deleted path arg, so explicit roots break every future
+  run after a directory is removed or moved. The widened scan surfaced
+  two literal-string `system`/`exec` calls in `bin/setup`, suppressed
+  inline with `# nosemgrep: ruby-command-injection` + reason.
+- Docs: Rails 8.1.4 / rmagick 7.1.6 version references corrected in
+  `AGENTS.md` and `README.md`.
+
 ## [0.1.0] - 2026-09-21
 
 First public release — extracted from the private `scripts` monorepo to a

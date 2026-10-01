@@ -23,7 +23,7 @@ pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.10.
 | Component | Technology |
 | --- | --- |
 | Language | Ruby 3.4.10 (rbenv) |
-| Framework | Rails 8.1.3.1 |
+| Framework | Rails 8.1.4 |
 | Web server | Puma 8.0.2 |
 | Asset pipeline | Propshaft |
 | JavaScript | Importmap, Turbo Rails, Stimulus Rails |
