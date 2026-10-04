@@ -4,6 +4,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/gundestrup/medicalc/badge)](https://www.codefactor.io/repository/github/gundestrup/medicalc)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/gundestrup/MediCalc)
 [![License](https://img.shields.io/github/license/gundestrup/MediCalc)](LICENSE)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gundestrup_MediCalc&metric=alert_status)](https://sonarcloud.io/dashboard?id=gundestrup_MediCalc)
 
 A medical calculation tool for drug steady-state concentrations and blood
 pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.10.
