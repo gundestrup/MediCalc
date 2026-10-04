@@ -1,0 +1,36 @@
+{
+  "repo_notes": [
+    { "content": "Rails 8.1 app (Ruby 3.4) with two medical calculators: drug steady-state concentration over time, and blood-pressure graphs from uploaded CSV. Both render Gruff line graphs returned as PNG via send_data." },
+    { "content": "No database at all: the active_record railtie is not loaded and there is no config/database.yml — all computation is request-scoped." },
+    { "content": "Key gotcha: the json gem is pinned ~> 2.0 — json 3.0 changed JSON.parse arity and breaks ActiveSupport session cookie decryption. Do not upgrade without verifying." },
+    { "content": "Key gotcha: gruff depends on rmagick — do not swap rmagick for ruby-vips without also replacing gruff." },
+    { "content": "Bulma 1.0.2 is committed locally (not CDN); Propshaft serves application.css before bulma.min.css alphabetically, so overrides need !important." },
+    { "content": "See AGENTS.md for full conventions, constraints, and verification commands." }
+  ],
+  "pages": [
+    {
+      "title": "Architecture Overview",
+      "purpose": "Request-scoped Rails app with no persistence: two controllers render forms and return Gruff-generated PNG graphs via send_data",
+      "page_notes": [{ "content": "Include Mermaid diagram: form params -> controller computation -> Gruff -> send_data PNG" }]
+    },
+    {
+      "title": "Steady State Calculator",
+      "purpose": "SteadyStatesController#index: dosage/half-life/count params -> steady-state concentration series -> Gruff line graph",
+      "parent": "Architecture Overview"
+    },
+    {
+      "title": "Blood Pressure Calculator",
+      "purpose": "BpsController#index + #graph: CSV upload -> stdlib csv parsing -> Gruff graph -> PNG response",
+      "parent": "Architecture Overview"
+    },
+    {
+      "title": "Assets and UI",
+      "purpose": "Propshaft + committed Bulma + custom application.css (watermark, navbar icon, transparent surfaces), Importmap/Turbo/Stimulus, brand icons in public/",
+      "parent": "Architecture Overview"
+    },
+    {
+      "title": "Security and CI",
+      "purpose": "Brakeman + Bundler Audit + Importmap audit in CI (SHA-pinned actions); bin/ci mirrors locally; Dependabot with 7-day cooldown"
+    }
+  ]
+}
