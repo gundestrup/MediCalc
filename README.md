@@ -7,7 +7,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gundestrup_MediCalc&metric=alert_status)](https://sonarcloud.io/dashboard?id=gundestrup_MediCalc)
 
 A medical calculation tool for drug steady-state concentrations and blood
-pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.10.
+pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.11.
 
 ## Features
 
@@ -23,7 +23,7 @@ pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.10.
 
 | Component | Technology |
 | --- | --- |
-| Language | Ruby 3.4.10 (rbenv) |
+| Language | Ruby 3.4.11 (rbenv) |
 | Framework | Rails 8.1.4 |
 | Web server | Puma 8.0.2 |
 | Asset pipeline | Propshaft |
@@ -37,8 +37,8 @@ pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.10.
 ## Getting started
 
 ```bash
-# Ensure Ruby 3.4.10 is active
-rbenv use 3.4.10
+# Ensure Ruby 3.4.11 is active
+rbenv use 3.4.11
 
 # Install dependencies
 bundle install
