@@ -26,9 +26,9 @@ All computation is request-scoped.
 | JS | Importmap, Turbo Rails, Stimulus Rails | — |
 | CSS | Bulma (committed locally) | 1.0.2 |
 | Graphing | Gruff (depends on rmagick) | 0.32.0 |
-| Image lib | rmagick | 7.1.6 |
+| Image lib | rmagick | 7.2.0 |
 | CSV | Ruby stdlib `csv` gem | — |
-| Security | Brakeman, Bundler Audit, Importmap audit | CI |
+| Security | Brakeman, Bundler Audit, Importmap audit, Semgrep CE | CI |
 
 ## Architecture
 
@@ -117,6 +117,7 @@ bundle exec rails runner "puts Rails.version"
 bundle exec brakeman
 bundle exec bundle-audit check
 bin/importmap audit
+semgrep scan --config .semgrep.yml --oss-only --metrics off --disable-version-check --error .
 
 # Route checks (with session cookie)
 curl -s -c /tmp/cookies.txt -o /dev/null -w "%{http_code}" http://127.0.0.1:3000/
@@ -128,8 +129,10 @@ All routes must return 200 with and without session cookies.
 
 ## CI
 
-- `.github/workflows/ci.yml` — Brakeman + Bundler Audit + Importmap audit
-  (SHA-pinned actions). `bin/ci` (`config/ci.rb`) runs the same checks locally.
+- `.github/workflows/ci.yml` — Brakeman, Bundler Audit, Importmap audit,
+  Semgrep CE, and Markdown lint (SHA-pinned actions). `bin/ci`
+  (`config/ci.rb`) runs the local setup, security scans, and Markdown lint;
+  run the Semgrep command above separately to mirror its CI job.
 - `.github/dependabot.yml` — Dependabot with 7-day cooldown.
 
 ## Definition of done
