@@ -27,14 +27,3 @@ updates:
     actions:
       patterns:
       - "*"
-- package-ecosystem: pip
-  directory: "/.github"
-  schedule:
-    interval: weekly
-  open-pull-requests-limit: 10
-  cooldown:
-    default-days: 7
-  groups:
-    ci-tools:
-      patterns:
-      - "*"
