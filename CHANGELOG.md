@@ -31,6 +31,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 
+- Ruby pin bumped from 3.4.11 to 3.4.12 (`.ruby-version`, `README.md`,
+  `AGENTS.md`).
 - CI: Semgrep moved from an inline `pip3 install semgrep==1.176.0` pin to hashed `.github/requirements-ci.txt` (compiled from `requirements-ci.in`, Python 3.12), installed with `--require-hashes`. Bumped Semgrep to 1.180.0; the version is now Dependabot-visible via a new `pip` ecosystem entry for `/.github`.
 
 - `brakeman` 8.0.6 → 8.1.0 (minor).
