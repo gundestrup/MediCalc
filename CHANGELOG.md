@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Security
 
+- Updated `crass` to 1.0.8 (CSS sanitizer bypass via bad-URL
+  tokenization; flagged by bundler-audit).
 - Updated `rails` to 8.1.4 and `rmagick` to 7.1.6 (patch/minor bumps);
   earlier updates added `rmagick` 7.1.5 upstream ImageMagick hardening
   and `bigdecimal` 4.1.3 GC-safety fixes.
@@ -32,7 +34,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 
 - Ruby pin bumped from 3.4.11 to 3.4.12 (`.ruby-version`, `README.md`,
-  `AGENTS.md`).
+  `AGENTS.md`); `ruby/setup-ruby` bumped to v1.335.0 (3.4.12 builds landed
+  in v1.334.0).
 - CI: Semgrep moved from an inline `pip3 install semgrep==1.176.0` pin to hashed `.github/requirements-ci.txt` (compiled from `requirements-ci.in`, Python 3.12), installed with `--require-hashes`. Bumped Semgrep to 1.180.0; the version is now Dependabot-visible via a new `pip` ecosystem entry for `/.github`.
 
 - `brakeman` 8.0.6 → 8.1.0 (minor).
