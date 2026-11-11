@@ -59,6 +59,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
   (SHA already pointed at the v25.0.0 release commit).
 - Local CI markdown lint pin: `markdownlint-cli2` 0.23.2 → 0.24.0
   (`config/ci.rb`).
+- CI: ImageMagick apt step now skips when `libmagickwand-dev` is
+  already installed (preinstalled on ubuntu-22.04 images), retries
+  transient fetch failures (`Acquire::Retries=3`), and fails fast
+  (`timeout-minutes: 5`) instead of hanging ~35 min on Ubuntu mirror
+  DNS outages.
 
 ## [0.1.0] - 2026-09-21
 

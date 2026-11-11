@@ -47,7 +47,12 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install ImageMagick dev headers (rmagick)
-        run: sudo apt-get update && sudo apt-get install -y libmagickwand-dev
+        timeout-minutes: 5
+        run: |
+          if ! dpkg-query -W libmagickwand-dev >/dev/null 2>&1; then
+            sudo apt-get update -o Acquire::Retries=3
+            sudo apt-get install -y -o Acquire::Retries=3 libmagickwand-dev
+          fi
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1.338.0
@@ -68,7 +73,12 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install ImageMagick dev headers (rmagick)
-        run: sudo apt-get update && sudo apt-get install -y libmagickwand-dev
+        timeout-minutes: 5
+        run: |
+          if ! dpkg-query -W libmagickwand-dev >/dev/null 2>&1; then
+            sudo apt-get update -o Acquire::Retries=3
+            sudo apt-get install -y -o Acquire::Retries=3 libmagickwand-dev
+          fi
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1.338.0
