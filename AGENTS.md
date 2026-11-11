@@ -20,11 +20,11 @@ All computation is request-scoped.
 | Component | Technology | Version |
 | --- | --- | --- |
 | Language | Ruby (rbenv) | 3.4.12 |
-| Framework | Rails | 8.1.4 |
+| Framework | Rails | 8.1.4.1 |
 | Web server | Puma | 8.0.2 |
 | Asset pipeline | Propshaft | — |
 | JS | Importmap, Turbo Rails, Stimulus Rails | — |
-| CSS | Bulma (committed locally) | 1.0.2 |
+| CSS | Bulma (committed locally) | 1.0.4 |
 | Graphing | Gruff (depends on rmagick) | 0.32.0 |
 | Image lib | rmagick | 7.2.0 |
 | CSV | Ruby stdlib `csv` gem | — |
@@ -65,7 +65,7 @@ get "up" => "rails/health#show"
 
 ### Assets
 
-- `app/assets/stylesheets/bulma.min.css` — Bulma 1.0.2 (committed, not CDN).
+- `app/assets/stylesheets/bulma.min.css` — Bulma 1.0.4 (committed, not CDN).
 - `app/assets/stylesheets/application.css` — custom styles: watermark,
   navbar icon, transparent backgrounds for form/table/box/notification.
 - Propshaft serves files in alphabetical order; `application.css` loads

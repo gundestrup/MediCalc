@@ -25,11 +25,11 @@ pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.12.
 | Component | Technology |
 | --- | --- |
 | Language | Ruby 3.4.12 (rbenv) |
-| Framework | Rails 8.1.4 |
+| Framework | Rails 8.1.4.1 |
 | Web server | Puma 8.0.2 |
 | Asset pipeline | Propshaft |
 | JavaScript | Importmap, Turbo Rails, Stimulus Rails |
-| CSS framework | Bulma 1.0.2 (committed locally) |
+| CSS framework | Bulma 1.0.4 (committed locally) |
 | Graphing | Gruff (with rmagick) |
 | CSV parsing | Ruby stdlib CSV |
 | Database | None — `active_record` is not loaded; computation is request-scoped |
@@ -85,7 +85,7 @@ MediCalc/
 │   │   └── bps/index.html.erb
 │   ├── assets/stylesheets/
 │   │   ├── application.css      # custom styles (watermark, transparency)
-│   │   └── bulma.min.css        # Bulma 1.0.2 framework
+│   │   └── bulma.min.css        # Bulma 1.0.4 framework
 │   └── javascript/              # Importmap, Turbo, Stimulus
 ├── config/
 │   ├── application.rb

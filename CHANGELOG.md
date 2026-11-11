@@ -13,6 +13,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 - Updated `rails` to 8.1.4 and `rmagick` to 7.1.6 (patch/minor bumps);
   earlier updates added `rmagick` 7.1.5 upstream ImageMagick hardening
   and `bigdecimal` 4.1.3 GC-safety fixes.
+- Updated `rails` to 8.1.4.1 (security-patch release) plus transitive
+  bumps: `nokogiri` 1.19.7, `loofah` 2.25.3, `rails-html-sanitizer`
+  1.7.2, `rack-test` 2.3.0, `minitest` 6.1.0, `prism` 2.1.0, `irb`
+  1.19.0, `io-console` 0.9.5, `pkg-config` 1.6.7.
 
 ### Fixed
 
@@ -47,6 +51,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
   inline with `# nosemgrep: ruby-command-injection` + reason.
 - Docs: Rails 8.1.4 / rmagick 7.1.6 version references corrected in
   `AGENTS.md` and `README.md`.
+- Bulma 1.0.2 → 1.0.4 (`app/assets/stylesheets/bulma.min.css`;
+  `README.md`, `AGENTS.md` version refs updated).
+- CI: `ruby/setup-ruby` v1.336.0 → v1.338.0 and `semgrep/semgrep`
+  container 1.182.0 → 1.185.0 (both SHA-pinned);
+  `DavidAnson/markdownlint-cli2-action` pin annotated `# v25.0.0`
+  (SHA already pointed at the v25.0.0 release commit).
+- Local CI markdown lint pin: `markdownlint-cli2` 0.23.2 → 0.24.0
+  (`config/ci.rb`).
 
 ## [0.1.0] - 2026-09-21
 

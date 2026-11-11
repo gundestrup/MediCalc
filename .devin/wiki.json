@@ -13,7 +13,7 @@
       "content": "Key gotcha: gruff depends on rmagick — do not swap rmagick for ruby-vips without also replacing gruff."
     },
     {
-      "content": "Bulma 1.0.2 is committed locally (not CDN); Propshaft serves application.css before bulma.min.css alphabetically, so overrides need !important."
+      "content": "Bulma 1.0.4 is committed locally (not CDN); Propshaft serves application.css before bulma.min.css alphabetically, so overrides need !important."
     },
     {
       "content": "See AGENTS.md for full conventions, constraints, and verification commands."
