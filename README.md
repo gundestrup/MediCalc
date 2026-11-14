@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/gundestrup/MediCalc/actions/workflows/ci.yml/badge.svg)](https://github.com/gundestrup/MediCalc/actions/workflows/ci.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/gundestrup/medicalc/badge)](https://www.codefactor.io/repository/github/gundestrup/medicalc)
-[![Semgrep CE](https://img.shields.io/badge/Semgrep-CE%20security%20scan-brightgreen?logo=semgrep)](https://github.com/gundestrup/MediCalc/actions/workflows/ci.yml)
+[![Semgrep](https://img.shields.io/badge/Semgrep-security%20scan-brightgreen?logo=semgrep)](https://github.com/gundestrup/MediCalc/actions/workflows/ci.yml)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/gundestrup/MediCalc)
 [![License](https://img.shields.io/github/license/gundestrup/MediCalc)](LICENSE)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gundestrup_MediCalc&metric=alert_status)](https://sonarcloud.io/dashboard?id=gundestrup_MediCalc)
@@ -33,7 +33,7 @@ pressure graphing. Built with Ruby on Rails 8.1 on Ruby 3.4.12.
 | Graphing | Gruff (with rmagick) |
 | CSV parsing | Ruby stdlib CSV |
 | Database | None — `active_record` is not loaded; computation is request-scoped |
-| Security scanning | Brakeman, Bundler Audit, Importmap audit, Semgrep CE (CI) |
+| Security scanning | Brakeman, Bundler Audit, Importmap audit, Semgrep (CI) |
 
 ## Getting started
 
@@ -65,7 +65,7 @@ The app is available at `http://127.0.0.1:3000`.
 - CSRF protection enabled (`protect_from_forgery with: :exception`).
 - `csp_meta_tag` and `csrf_meta_tags` in the layout.
 - `allow_browser versions: :modern` restricts to modern browsers.
-- Brakeman, Bundler Audit, Importmap audit, Semgrep CE, and Markdown lint run in CI
+- Brakeman, Bundler Audit, Importmap audit, Semgrep, and Markdown lint run in CI
   (`.github/workflows/ci.yml`).
 - Dependabot configured with 7-day cooldown periods.
 - GitHub Actions pinned to commit SHAs.

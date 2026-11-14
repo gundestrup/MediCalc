@@ -28,7 +28,7 @@ All computation is request-scoped.
 | Graphing | Gruff (depends on rmagick) | 0.32.0 |
 | Image lib | rmagick | 7.2.0 |
 | CSV | Ruby stdlib `csv` gem | — |
-| Security | Brakeman, Bundler Audit, Importmap audit, Semgrep CE | CI |
+| Security | Brakeman, Bundler Audit, Importmap audit, Semgrep | CI |
 
 ## Architecture
 
@@ -130,9 +130,10 @@ All routes must return 200 with and without session cookies.
 ## CI
 
 - `.github/workflows/ci.yml` — Brakeman, Bundler Audit, Importmap audit,
-  Semgrep CE, and Markdown lint (SHA-pinned actions). `bin/ci`
-  (`config/ci.rb`) runs the local setup, security scans, and Markdown lint;
-  run the Semgrep command above separately to mirror its CI job.
+  Semgrep (`semgrep ci`, App policies via `SEMGREP_APP_TOKEN`), and
+  Markdown lint (SHA-pinned actions). `bin/ci` (`config/ci.rb`) runs the
+  local setup, security scans, and Markdown lint; run the Semgrep command
+  above separately to check the local CE rules in `.semgrep.yml`.
 - `.github/dependabot.yml` — Dependabot with 7-day cooldown.
 
 ## Definition of done

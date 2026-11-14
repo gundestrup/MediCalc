@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Changed
+
+- Switched the CI Semgrep job from Semgrep CE (`semgrep scan` with the
+  local `.semgrep.yml`) to `semgrep ci` (App policies via
+  `SEMGREP_APP_TOKEN`). The local `.semgrep.yml` CE rules remain for
+  local runs.
+
 ### Security
 
 - Updated `crass` to 1.0.8 (CSS sanitizer bypass via bad-URL
