@@ -6,13 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
-### Changed
-
-- Switched the CI Semgrep job from Semgrep CE (`semgrep scan` with the
-  local `.semgrep.yml`) to `semgrep ci` (App policies via
-  `SEMGREP_APP_TOKEN`). The local `.semgrep.yml` CE rules remain for
-  local runs.
-
 ### Security
 
 - Updated `crass` to 1.0.8 (CSS sanitizer bypass via bad-URL
@@ -44,6 +37,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 
+- Switched the CI Semgrep job from Semgrep CE (`semgrep scan` with the
+  local `.semgrep.yml`) to `semgrep ci` (App policies via
+  `SEMGREP_APP_TOKEN`). The local `.semgrep.yml` CE rules remain for
+  local runs.
 - Ruby pin bumped from 3.4.11 to 3.4.12 (`.ruby-version`, `README.md`,
   `AGENTS.md`); `ruby/setup-ruby` bumped to v1.335.0 (3.4.12 builds landed
   in v1.334.0).
