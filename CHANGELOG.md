@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Security
 
+- Updated `puma` to 8.0.3 (reactor stalls when clients stop reading
+  `100 Continue` writes; GHSA-xw3h-pgr9-3vg7, flagged by bundler-audit).
 - Updated `crass` to 1.0.8 (CSS sanitizer bypass via bad-URL
   tokenization; flagged by bundler-audit).
 - Updated `rails` to 8.1.4 and `rmagick` to 7.1.6 (patch/minor bumps);
