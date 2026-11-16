@@ -1,6 +1,4 @@
-<!-- markdownlint-disable MD013 MD033 -->
 # MediCalc <a href="https://gundestrup.github.io/flow/"><img align="right" src="https://gundestrup.github.io/flow/assets/badges/part-of-flow.svg?v=2" alt="Part of Flow software" height="40"></a>
-<!-- markdownlint-enable MD013 MD033 -->
 
 [![CI](https://github.com/gundestrup/MediCalc/actions/workflows/ci.yml/badge.svg)](https://github.com/gundestrup/MediCalc/actions/workflows/ci.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/gundestrup/medicalc/badge)](https://www.codefactor.io/repository/github/gundestrup/medicalc)
