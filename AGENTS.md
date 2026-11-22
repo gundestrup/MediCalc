@@ -83,10 +83,12 @@ get "up" => "rails/health#show"
 
 ## Known constraints
 
-1. **`json` gem pinned to `~> 2.0`.** The `json` gem 3.0 changed
-   `JSON.parse` to accept only one argument, breaking ActiveSupport
-   session cookie decryption (which passes two arguments). Do not upgrade
-   `json` to 3.x without verifying ActiveSupport compatibility.
+1. **`json` 3.x requires Rails 8.1.4+.** `json` 3.0 removed the positional
+   options hash from `JSON.parse` (options are keyword-only), which broke
+   `ActiveSupport::JSON.decode` and session cookie decryption on older
+   ActiveSupport. Fixed upstream by rails/rails#58601 (in 8.1.4.x);
+   verified compatible via verifier/encryptor round-trip. Do not
+   downgrade ActiveSupport below 8.1.4 while `json ~> 3.0` is used.
 
 2. **`gruff` requires `rmagick`.** Do not replace `rmagick` with
    `ruby-vips` without also replacing `gruff` — `gruff` 0.32.0 explicitly

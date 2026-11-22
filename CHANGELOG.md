@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Changed
+
+- Updated `puma` 8.0.3 → 8.1.2 (constraint `~> 8.0.3` → `~> 8.1.2`).
+- Updated `json` 2.21.2 → 3.1.0 (constraint `~> 2.0` → `~> 3.0`) — safe on
+  Rails 8.1.4.1: `ActiveSupport::JSON.decode` uses keyword options since
+  rails/rails#58601, verified via verifier/encryptor round-trip.
+- Updated `brakeman` 8.1.0 → 8.1.1 (development dependency).
+
 ### Security
 
 - Updated `puma` to 8.0.3 (reactor stalls when clients stop reading
