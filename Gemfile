@@ -1,14 +1,14 @@
 source "https://rubygems.org"
 
-# Pin json to 2.x — json 3.0 changed JSON.parse signature (breaks ActiveSupport session decryption)
-gem "json", "~> 2.0"
+# json 3.x requires Rails 8.1.4+ (ActiveSupport::JSON.decode keyword options, rails/rails#58601)
+gem "json", "~> 3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 8.1.1"
+gem "puma", "~> 8.1.2"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
