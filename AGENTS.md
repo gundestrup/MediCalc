@@ -19,7 +19,7 @@ All computation is request-scoped.
 
 | Component | Technology | Version |
 | --- | --- | --- |
-| Language | Ruby (rbenv) | 3.4.12 |
+| Language | Ruby (rbenv) | 3.4.13 |
 | Framework | Rails | 8.1.4.1 |
 | Web server | Puma | 8.0.2 |
 | Asset pipeline | Propshaft | — |
@@ -104,7 +104,7 @@ get "up" => "rails/health#show"
 ## Development
 
 ```bash
-rbenv use 3.4.12
+rbenv use 3.4.13
 bundle install
 bin/rails server    # http://127.0.0.1:3000
 ```

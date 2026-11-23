@@ -6,16 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
-### Changed
-
-- Updated `puma` 8.0.3 → 8.1.2 (constraint `~> 8.0.3` → `~> 8.1.2`).
-- Updated `json` 2.21.2 → 3.1.0 (constraint `~> 2.0` → `~> 3.0`) — safe on
-  Rails 8.1.4.1: `ActiveSupport::JSON.decode` uses keyword options since
-  rails/rails#58601, verified via verifier/encryptor round-trip.
-- Updated `brakeman` 8.1.0 → 8.1.1 (development dependency).
-
 ### Security
 
+- Ruby pin bumped from 3.4.12 to 3.4.13 (`.ruby-version`, `README.md`,
+  `AGENTS.md`) — critical remote code execution fix (CVE-2026-132825,
+  flagged by Brakeman `EOLRuby`).
 - Updated `puma` to 8.0.3 (reactor stalls when clients stop reading
   `100 Continue` writes; GHSA-xw3h-pgr9-3vg7, flagged by bundler-audit).
 - Updated `crass` to 1.0.8 (CSS sanitizer bypass via bad-URL
@@ -78,6 +73,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
   transient fetch failures (`Acquire::Retries=3`), and fails fast
   (`timeout-minutes: 5`) instead of hanging ~35 min on Ubuntu mirror
   DNS outages.
+- Updated `puma` 8.0.3 → 8.1.2 (constraint `~> 8.0.3` → `~> 8.1.2`).
+- Updated `json` 2.21.2 → 3.1.0 (constraint `~> 2.0` → `~> 3.0`) — safe on
+  Rails 8.1.4.1: `ActiveSupport::JSON.decode` uses keyword options since
+  rails/rails#58601, verified via verifier/encryptor round-trip.
+- Updated `brakeman` 8.1.0 → 8.1.1 (development dependency).
 
 ## [0.1.0] - 2026-09-21
 
