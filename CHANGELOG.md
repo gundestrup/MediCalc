@@ -10,7 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 - Ruby pin bumped from 3.4.12 to 3.4.13 (`.ruby-version`, `README.md`,
   `AGENTS.md`) — critical remote code execution fix (CVE-2026-132825,
-  flagged by Brakeman `EOLRuby`).
+  flagged by Brakeman `EOLRuby`); `ruby/setup-ruby` bumped to v1.343.0
+  (3.4.13 builds landed after v1.338.0).
 - Updated `puma` to 8.0.3 (reactor stalls when clients stop reading
   `100 Continue` writes; GHSA-xw3h-pgr9-3vg7, flagged by bundler-audit).
 - Updated `crass` to 1.0.8 (CSS sanitizer bypass via bad-URL
